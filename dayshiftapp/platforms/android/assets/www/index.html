@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="DayShift">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Day Shift</title>
+</head>
+<body ng-controller="MainController as main">
+<div class="logo">
+Day Shift
+</div>
+ <div>
+    <button ng-click="main.scanForDevices()">Scan</button>
+</div>
+<div ng-show="main.selectedDevice" class="settings">
+    <label>Start</label><input time-of-day  ng-model="main.settings.startTime" type='time'/><br/>
+    <label>End</label><input   time-of-day  ng-model="main.settings.endTime" type='time'/><br/>
+    <label>Interval</label><input ng-model="main.settings.intervalTime" type='number'/><br/>
+    <button ng-click="main.updateSettings(main.settings)">Send to device</button>            
+</div>
+<div class='status'>
+    {{main.status}}
+</div>
+<div>
+    <div class="device" ng-repeat="device in main.devices" ng-click="main.selectDevice(device)" ng-class=" device.id == main.selectedDevice.id ? 'selected':'' ">
+        {{device.name}}
+    </div>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
