@@ -105,6 +105,10 @@ To install it on the device run:
 
 If you get something like ` Unable to locate DeviceSupport directory.` open the project `platforms/ios/DayShift.xcodeproj` directly and install it from there.
 
+# Placement
+
+Aim it at your face from about 1-2ft away. I have it taped to my beds headboard.
+
 # License
 
 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/4.0/)
