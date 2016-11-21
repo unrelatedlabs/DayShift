@@ -59,6 +59,7 @@ Pin 12 on Arduino should drive the LED.
 
 
 Connect digital **pin 12** through a 100ohm resistor to BASE of FMMT617 and GND. That's it. You can power the headlamp from the 5V on Arduino instead from the batteries, but that's optional. (5V gives it an extra boost). 
+
 I've also used a 22-ohm resistor from 5V on Arduino to the + on the headlamp to smooth the current surges on power up and to protect the circuit and the USB in case the code misbehaved.
 
 # Arduino Sketch
@@ -71,6 +72,8 @@ delay(2);
 digitalWrite(12,  LOW);    
 delay(10000);
 ```
+
+I've added start/end time configuration and BTLE support though. 
 
 You can run it directly in the awesome new online Arduino Editor here:
 
@@ -102,6 +105,9 @@ To install it on the device run:
 
 If you get something like ` Unable to locate DeviceSupport directory.` open the project `platforms/ios/DayShift.xcodeproj` directly and install it from there.
 
+# License
+
+[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 
 [animated]: dayshift-animated.gif
